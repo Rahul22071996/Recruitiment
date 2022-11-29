@@ -1,0 +1,126 @@
+{% extends 'basee.html'%}
+{% block container %}
+
+{% load static %}
+{% block header %}
+{% endblock %}
+
+
+  <body>
+    <header class="header header--signin" data-sticky="false">
+    <div class="header__left">
+        <a class="ps-logo" href="/"><img src="{% static 'img/new/MP_Govt-removebg-preview.png' %}" alt="" style="width:50px;height:auto;"></a></div>
+</header>
+      <!--include search-sidebar-->
+    <div class="ps-page" id="dashboard">
+        <nav class="ps-navigation--dashboard">
+        <ul>
+          <!-- <li><a href="dashboard.php">Dashboard</a></li> -->
+           <li ><a href="/"> Home</a></li>
+          <li ><a  href="/Advertisement/">Advertisement</a></li>
+          <li class="active"><a href="/Apply/"> Apply</a></li>
+          <li ><a href="/UnpaidApplication/"> Pay Unpaid Application Form</a></li>
+          <li ><a href="/Application-Number/"> Application Number</a></li>
+          
+         <!--  <li><a href="feedback.html">Feedback</a></li> -->
+        </ul>
+      </nav>
+      <div class="ps-section--sidebar ps-layout">
+        <div class="container">
+          <div class="ps-section__container">
+            <div class="ps-section__content">
+     
+         <!-- <form class="ps-form--settings"> -->
+                <figure>
+                  <h3 class="ps-heading--2">Apply /<span class="ps-highlight"> No. of Vacancy - {{Total_Vacancy}}</span></h3>
+
+                  <div class="row">
+                    {% for post in Vacancy %}
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <h3 class="ps-heading--2">Advertisement Name <span class="ps-highlight">  - {{post.Name_of_Exam}} </span></h3>
+                  </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>START DATE</label>
+                        <input class="form-control" type="date" placeholder=""  value="{{post.Start_Date|date:'Y-m-d'}}" readonly="">
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>END DATE </label>
+                        <input class="form-control" type="date" placeholder="" value="{{post.End_Date|date:'Y-m-d'}}" readonly="">
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label></label>
+                        
+                       
+                       {% if Current_Date >= post.Start_Date and  Current_Date <= post.End_Date  %}
+                       <a href="/Flat/redirect/"><button class="ps-btn getSubmitButton" style="float: center;">Apply</button></a>
+                       {% else %}
+                       <button class="ps-btn getSubmitButton" style="float: center;" onclick="alert('Wait for the Date')">Apply</button>
+                       {% endif %}
+                      </div>
+
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>Phone Number</label>
+                        
+                  
+                        <input class="form-control" type="text" placeholder="" value="{{user.userprofile.phone}}" readonly="">
+                        
+                      </div>
+                    </div> -->
+                 
+                    </div>
+                </figure>
+              
+              </form>
+            </div>
+            <div class="ps-section__sidebar">
+               <aside class="widget widget_profile widget_progress">
+                <div class="ps-block--user">
+                  <div class="ps-block__thumbnail"><img src="" alt=""></div>
+                  <div class="ps-block__content">
+                    <p><strong>Welcome back</strong></p>
+                    <h4>{{user}}</h4>
+                   <!--  <a href="#">View your profile<i class="fa fa-caret-right"></i></a> -->
+                  </div>
+                </div>
+                <a href="/logout/" class="ps-btn ps-btn--gradient ps-btn--sm" type="reset" style="color: white;">Logout</a>
+              
+              </aside>
+             <!--  <aside class="widget widget_profile widget_list">
+                <h3 class="widget-title">Settings</h3>
+                <ul class="ps-list">
+                  <li><a href="#">General infomation</a></li>
+                  <li><a href="#">Password</a></li>
+                  <li><a href="#">Edit Profile</a></li>
+
+                </ul>
+              </aside> -->
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
+      <div class="ps-search__content">
+        <form class="ps-form--primary-search" action="do_action" method="post">
+          <input class="form-control" type="text" placeholder="Search for...">
+          <button><i class="fa fa-search"></i></button>
+        <!-- </form> -->
+      </div>
+    </div>
+    <!-- Plugins-->
+ {% endblock %}   

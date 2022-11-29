@@ -1,0 +1,625 @@
+{% extends 'dashbord.html'%}
+{% block section %}
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <h2>Vacancy Position</h2>
+            </div>            
+            <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
+              <button onclick="move('freelancer-add.php');" class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="<?php echo 'https://'.site_url ;?>"><i class="zmdi zmdi-home"></i> </a></li>
+                    <li class="breadcrumb-item active" style="color: white;">Vacancy Position</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">            
+            <div class="col-lg-12">
+                <div class="card">                   
+                    <div class="body">
+                        <div class="col-md-12" ><p style="background: #2e3092; text-align: center; color: white;" >Add Position</p>
+
+                </div>
+                <form method="POST" action="/Recuritment/admin/view/openings/{{id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                 <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Name of Exam</label>
+                 {{form.Name_of_Exam}}
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Advertisement</label>
+                {{form.Advertisement}}
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Start Date</label>
+                {{form.Start_Date}}
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">End Date</label>
+                {{form.End_Date}}
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Advertisement Pdf</label>
+                 {{form.Advertisement_Pdf}}
+                    <span id="messages"></span>
+                  </div>
+                </div>
+            </div>
+                        <div class="table-responsive">
+
+                            
+                            <table class="table td_2  js-basic-example dataTable vcenter">
+                               
+                                <thead >
+                                    <tr style="background: #2e3092;">
+                                        <th style="color: white;">#</th>
+                                        <th style="color: white;">Company Name</th>
+                                        <th style="color: white;">Stream Name</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;UR O&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;URF&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;STO&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;STF&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;SCO&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;SCF&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;OBCO&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;OBCF&nbsp;&nbsp;</th>
+                                         <th style="color: white;">&nbsp;&nbsp;EWS&nbsp;&nbsp;</th>
+                                          <th style="color: white;">&nbsp;&nbsp;EWSF&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;PWDHI&nbsp;&nbsp;</th>
+                                           <th style="color: white;"> &nbsp;&nbsp;PWDOC&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;PWDVI&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;PWDID&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;TOTAL&nbsp;&nbsp;</th>
+
+                                        </tr>
+                                </thead>  
+                               
+                                
+                                <tbody>
+                                   
+                                    <tr >
+                                            <td>1</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >Electrical</td>
+                                            <td>{{form.BHOPAL_Electrical_URO}}</td>
+                                            <td >{{form.BHOPAL_Electrical_URF}}</td>
+                                            <td>{{form.BHOPAL_Electrical_STO}}</td>
+                                            <td >{{form.BHOPAL_Electrical_STF}}</td>
+                                            <td >{{form.BHOPAL_Electrical_SCO}}</td>
+                                            <td >{{form.BHOPAL_Electrical_SCF}}</td>
+                                            <td >{{form.BHOPAL_Electrical_OBCO}}</td>
+                                            <td >{{form.BHOPAL_Electrical_OBCF}}</td>
+                                            <td>{{form.BHOPAL_Electrical_EWS}}</td>
+                                            <td >{{form.BHOPAL_Electrical_EWSF}}</td>
+                                            <td >{{form.BHOPAL_Electrical_PWDHI}}</td>
+                                            <td >{{form.BHOPAL_Electrical_PWDOC}}</td>
+                                            <td >{{form.BHOPAL_Electrical_PWDVI}}</td>
+                                            <td >{{form.BHOPAL_Electrical_PWDID}}</td>
+                                            <td>{{form.BHOPAL_Electrical_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>2</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >Civil</td>
+                                            <td>{{form.BHOPAL_Civil_URO}}</td>
+                                            <td >{{form.BHOPAL_Civil_URF}}</td>
+                                            <td>{{form.BHOPAL_Civil_STO}}</td>
+                                            <td >{{form.BHOPAL_Civil_STF}}</td>
+                                            <td >{{form.BHOPAL_Civil_SCO}}</td>
+                                            <td >{{form.BHOPAL_Civil_SCF}}</td>
+                                            <td >{{form.BHOPAL_Civil_OBCO}}</td>
+                                            <td >{{form.BHOPAL_Civil_OBCF}}</td>
+                                            <td>{{form.BHOPAL_Civil_EWS}}</td>
+                                            <td >{{form.BHOPAL_Civil_EWSF}}</td>
+                                            <td >{{form.BHOPAL_Civil_PWDHI}}</td>
+                                            <td >{{form.BHOPAL_Civil_PWDOC}}</td>
+                                            <td >{{form.BHOPAL_Civil_PWDVI}}</td>
+                                            <td >{{form.BHOPAL_Civil_PWDID}}</td>
+                                            <td>{{form.BHOPAL_Civil_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>3</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >IT</td>
+                                            <td>{{form.BHOPAL_It_URO}}</td>
+                                            <td>{{form.BHOPAL_It_URF}}</td>
+                                            <td>{{form.BHOPAL_It_STO}}</td>
+                                            <td>{{form.BHOPAL_It_STF}}</td>
+                                            <td>{{form.BHOPAL_It_SCO}}</td>
+                                            <td>{{form.BHOPAL_It_SCF}}</td>
+                                            <td>{{form.BHOPAL_It_OBCO}}</td>
+                                            <td>{{form.BHOPAL_It_OBCF}}</td>
+                                            <td>{{form.BHOPAL_It_EWS}}</td>
+                                            <td>{{form.BHOPAL_It_EWSF}}</td>
+                                            <td>{{form.BHOPAL_It_PWDHI}}</td>
+                                            <td>{{form.BHOPAL_It_PWDOC}}</td>
+                                            <td>{{form.BHOPAL_It_PWDVI}}</td>
+                                            <td>{{form.BHOPAL_It_PWDID}}</td>
+                                            <td>{{form.BHOPAL_It_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>4</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >Mechanical</td>
+                                             <td>{{form.BHOPAL_Mechanical_URO}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_URF}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_STO}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_STF}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_SCO}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_SCF}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_OBCO}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_OBCF}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_EWS}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_EWSF}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_PWDHI}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_PWDOC}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_PWDVI}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_PWDID}}</td>
+                                            <td>{{form.BHOPAL_Mechanical_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>5</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >Electrical</td>
+                                           <td>{{form.JABALPUR_Electrical_URO}}</td>
+                                            <td>{{form.JABALPUR_Electrical_URF}}</td>
+                                            <td>{{form.JABALPUR_Electrical_STO}}</td>
+                                            <td>{{form.JABALPUR_Electrical_STF}}</td>
+                                            <td>{{form.JABALPUR_Electrical_SCO}}</td>
+                                            <td>{{form.JABALPUR_Electrical_SCF}}</td>
+                                            <td>{{form.JABALPUR_Electrical_OBCO}}</td>
+                                            <td>{{form.JABALPUR_Electrical_OBCF}}</td>
+                                            <td>{{form.JABALPUR_Electrical_EWS}}</td>
+                                            <td>{{form.JABALPUR_Electrical_EWSF}}</td>
+                                            <td>{{form.JABALPUR_Electrical_PWDHI}}</td>
+                                            <td>{{form.JABALPUR_Electrical_PWDOC}}</td>
+                                            <td>{{form.JABALPUR_Electrical_PWDVI}}</td>
+                                            <td>{{form.JABALPUR_Electrical_PWDID}}</td>
+                                            <td>{{form.JABALPUR_Electrical_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>6</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >Civil</td>
+                                            <td>{{form.JABALPUR_Civil_URO}}</td>
+                                            <td>{{form.JABALPUR_Civil_URF}}</td>
+                                            <td>{{form.JABALPUR_Civil_STO}}</td>
+                                            <td>{{form.JABALPUR_Civil_STF}}</td>
+                                            <td>{{form.JABALPUR_Civil_SCO}}</td>
+                                            <td>{{form.JABALPUR_Civil_SCF}}</td>
+                                            <td>{{form.JABALPUR_Civil_OBCO}}</td>
+                                            <td>{{form.JABALPUR_Civil_OBCF}}</td>
+                                            <td>{{form.JABALPUR_Civil_EWS}}</td>
+                                            <td>{{form.JABALPUR_Civil_EWSF}}</td>
+                                            <td>{{form.JABALPUR_Civil_PWDHI}}</td>
+                                            <td>{{form.JABALPUR_Civil_PWDOC}}</td>
+                                            <td>{{form.JABALPUR_Civil_PWDVI}}</td>
+                                            <td>{{form.JABALPUR_Civil_PWDID}}</td>
+                                            <td>{{form.JABALPUR_Civil_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>7</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >IT</td>
+                                            <td>{{form.JABALPUR_It_URO}}</td>
+                                            <td>{{form.JABALPUR_It_URF}}</td>
+                                            <td>{{form.JABALPUR_It_STO}}</td>
+                                            <td>{{form.JABALPUR_It_STF}}</td>
+                                            <td>{{form.JABALPUR_It_SCO}}</td>
+                                            <td>{{form.JABALPUR_It_SCF}}</td>
+                                            <td>{{form.JABALPUR_It_OBCO}}</td>
+                                            <td>{{form.JABALPUR_It_OBCF}}</td>
+                                            <td>{{form.JABALPUR_It_EWS}}</td>
+                                            <td>{{form.JABALPUR_It_EWSF}}</td>
+                                            <td>{{form.JABALPUR_It_PWDHI}}</td>
+                                            <td>{{form.JABALPUR_It_PWDOC}}</td>
+                                            <td>{{form.JABALPUR_It_PWDVI}}</td>
+                                            <td>{{form.JABALPUR_It_PWDID}}</td>
+                                            <td>{{form.JABALPUR_It_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>8</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >Mechanical</td>
+                                            <td>{{form.JABALPUR_Mechanical_URO}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_URF}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_STO}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_STF}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_SCO}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_SCF}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_OBCO}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_OBCF}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_EWS}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_EWSF}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_PWDHI}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_PWDOC}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_PWDVI}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_PWDID}}</td>
+                                            <td>{{form.JABALPUR_Mechanical_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>9</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >Electrical</td>
+                                           <td>{{form.INDORE_Electrical_URO}}</td>
+                                            <td>{{form.INDORE_Electrical_URF}}</td>
+                                            <td>{{form.INDORE_Electrical_STO}}</td>
+                                            <td>{{form.INDORE_Electrical_STF}}</td>
+                                            <td>{{form.INDORE_Electrical_SCO}}</td>
+                                            <td>{{form.INDORE_Electrical_SCF}}</td>
+                                            <td>{{form.INDORE_Electrical_OBCO}}</td>
+                                            <td>{{form.INDORE_Electrical_OBCF}}</td>
+                                            <td>{{form.INDORE_Electrical_EWS}}</td>
+                                            <td>{{form.INDORE_Electrical_EWSF}}</td>
+                                            <td>{{form.INDORE_Electrical_PWDHI}}</td>
+                                            <td>{{form.INDORE_Electrical_PWDOC}}</td>
+                                            <td>{{form.INDORE_Electrical_PWDVI}}</td>
+                                            <td>{{form.INDORE_Electrical_PWDID}}</td>
+                                            <td>{{form.INDORE_Electrical_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>10</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >Civil</td>
+                                           <td>{{form.INDORE_Civil_URO}}</td>
+                                            <td>{{form.INDORE_Civil_URF}}</td>
+                                            <td>{{form.INDORE_Civil_STO}}</td>
+                                            <td>{{form.INDORE_Civil_STF}}</td>
+                                            <td>{{form.INDORE_Civil_SCO}}</td>
+                                            <td>{{form.INDORE_Civil_SCF}}</td>
+                                            <td>{{form.INDORE_Civil_OBCO}}</td>
+                                            <td>{{form.INDORE_Civil_OBCF}}</td>
+                                            <td>{{form.INDORE_Civil_EWS}}</td>
+                                            <td>{{form.INDORE_Civil_EWSF}}</td>
+                                            <td>{{form.INDORE_Civil_PWDHI}}</td>
+                                            <td>{{form.INDORE_Civil_PWDOC}}</td>
+                                            <td>{{form.INDORE_Civil_PWDVI}}</td>
+                                            <td>{{form.INDORE_Civil_PWDID}}</td>
+                                            <td>{{form.INDORE_Civil_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>11</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >IT</td>
+                                          <td>{{form.INDORE_It_URO}}</td>
+                                            <td>{{form.INDORE_It_URF}}</td>
+                                            <td>{{form.INDORE_It_STO}}</td>
+                                            <td>{{form.INDORE_It_STF}}</td>
+                                            <td>{{form.INDORE_It_SCO}}</td>
+                                            <td>{{form.INDORE_It_SCF}}</td>
+                                            <td>{{form.INDORE_It_OBCO}}</td>
+                                            <td>{{form.INDORE_It_OBCF}}</td>
+                                            <td>{{form.INDORE_It_EWS}}</td>
+                                            <td>{{form.INDORE_It_EWSF}}</td>
+                                            <td>{{form.INDORE_It_PWDHI}}</td>
+                                            <td>{{form.INDORE_It_PWDOC}}</td>
+                                            <td>{{form.INDORE_It_PWDVI}}</td>
+                                            <td>{{form.INDORE_It_PWDID}}</td>
+                                            <td>{{form.INDORE_It_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>12</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >Mechanical</td>
+                                           <td>{{form.INDORE_Mechanical_URO}}</td>
+                                            <td>{{form.INDORE_Mechanical_URF}}</td>
+                                            <td>{{form.INDORE_Mechanical_STO}}</td>
+                                            <td>{{form.INDORE_Mechanical_STF}}</td>
+                                            <td>{{form.INDORE_Mechanical_SCO}}</td>
+                                            <td>{{form.INDORE_Mechanical_SCF}}</td>
+                                            <td>{{form.INDORE_Mechanical_OBCO}}</td>
+                                            <td>{{form.INDORE_Mechanical_OBCF}}</td>
+                                            <td>{{form.INDORE_Mechanical_EWS}}</td>
+                                            <td>{{form.INDORE_Mechanical_EWSF}}</td>
+                                            <td>{{form.INDORE_Mechanical_PWDHI}}</td>
+                                            <td>{{form.INDORE_Mechanical_PWDOC}}</td>
+                                            <td>{{form.INDORE_Mechanical_PWDVI}}</td>
+                                            <td>{{form.INDORE_Mechanical_PWDID}}</td>
+                                            <td>{{form.INDORE_Mechanical_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>13</td>
+                                            <td >MPGENCO</td>
+                                            <td >Electrical</td>
+                                           <td>{{form.MPGENCO_ELECTRICAL_URO}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_URF}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_STO}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_STF}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_SCO}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_SCF}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_OBCO}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_OBCF}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_EWS}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_EWSF}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_PWDHI}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_PWDOC}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_PWDVI}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_PWDID}}</td>
+                                            <td>{{form.MPGENCO_ELECTRICAL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>14</td>
+                                            <td >MPGENCO</td>
+                                            <td >Civil</td>
+                                            <td>{{form.MPGENCO_CIVIL_URO}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_URF}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_STO}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_STF}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_SCO}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_SCF}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_OBCO}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_OBCF}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_EWS}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_EWSF}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_PWDHI}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_PWDOC}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_PWDVI}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_PWDID}}</td>
+                                            <td>{{form.MPGENCO_CIVIL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>15</td>
+                                            <td >MPGENCO</td>
+                                            <td >IT</td>
+                                            <td>{{form.MPGENCO_IT_URO}}</td>
+                                            <td>{{form.MPGENCO_IT_URF}}</td>
+                                            <td>{{form.MPGENCO_IT_STO}}</td>
+                                            <td>{{form.MPGENCO_IT_STF}}</td>
+                                            <td>{{form.MPGENCO_IT_SCO}}</td>
+                                            <td>{{form.MPGENCO_IT_SCF}}</td>
+                                            <td>{{form.MPGENCO_IT_OBCO}}</td>
+                                            <td>{{form.MPGENCO_IT_OBCF}}</td>
+                                            <td>{{form.MPGENCO_IT_EWS}}</td>
+                                            <td>{{form.MPGENCO_IT_EWSF}}</td>
+                                            <td>{{form.MPGENCO_IT_PWDHI}}</td>
+                                            <td>{{form.MPGENCO_IT_PWDOC}}</td>
+                                            <td>{{form.MPGENCO_IT_PWDVI}}</td>
+                                            <td>{{form.MPGENCO_IT_PWDID}}</td>
+                                            <td>{{form.MPGENCO_IT_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>16</td>
+                                            <td >MPGENCO</td>
+                                            <td >Mechanical</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_URO}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_URF}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_STO}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_STF}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_SCO}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_SCF}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_OBCO}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_OBCF}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_EWS}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_EWSF}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_PWDHI}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_PWDOC}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_PWDVI}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_PWDID}}</td>
+                                            <td>{{form.MPGENCO_MECHANICAL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>17</td>
+                                            <td >MPTRANSCO </td>
+                                            <td >Electrical</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_URO}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_URF}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_STO}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_STF}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_SCO}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_SCF}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_OBCO}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_OBCF}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_EWS}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_EWSF}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_PWDHI}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_PWDOC}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_PWDVI}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_PWDID}}</td>
+                                            <td>{{form.MPTRANSCO_ELECTRICAL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>18</td>
+                                            <td >MPTRANSCO</td>
+                                            <td >Civil</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_URO}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_URF}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_STO}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_STF}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_SCO}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_SCF}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_OBCO}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_OBCF}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_EWS}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_EWSF}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_PWDHI}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_PWDOC}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_PWDVI}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_PWDID}}</td>
+                                            <td>{{form.MPTRANSCO_CIVIL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>19</td>
+                                            <td >MPTRANSCO</td>
+                                            <td >IT</td>
+                                            <td>{{form.MPTRANSCO_IT_URO}}</td>
+                                            <td>{{form.MPTRANSCO_IT_URF}}</td>
+                                            <td>{{form.MPTRANSCO_IT_STO}}</td>
+                                            <td>{{form.MPTRANSCO_IT_STF}}</td>
+                                            <td>{{form.MPTRANSCO_IT_SCO}}</td>
+                                            <td>{{form.MPTRANSCO_IT_SCF}}</td>
+                                            <td>{{form.MPTRANSCO_IT_OBCO}}</td>
+                                            <td>{{form.MPTRANSCO_IT_OBCF}}</td>
+                                            <td>{{form.MPTRANSCO_IT_EWS}}</td>
+                                            <td>{{form.MPTRANSCO_IT_EWSF}}</td>
+                                            <td>{{form.MPTRANSCO_IT_PWDHI}}</td>
+                                            <td>{{form.MPTRANSCO_IT_PWDOC}}</td>
+                                            <td>{{form.MPTRANSCO_IT_PWDVI}}</td>
+                                            <td>{{form.MPTRANSCO_IT_PWDID}}</td>
+                                            <td>{{form.MPTRANSCO_IT_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>20</td>
+                                            <td >MPTRANSCO</td>
+                                            <td >Mechanical</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_URO}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_URF}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_STO}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_STF}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_SCO}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_SCF}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_OBCO}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_OBCF}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_EWS}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_EWSF}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_PWDHI}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_PWDOC}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_PWDVI}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_PWDID}}</td>
+                                            <td>{{form.MPTRANSCO_MECHANICAL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>21</td>
+                                            <td >MPPMCL</td>
+                                            <td >Electrical</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_URO}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_URF}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_STO}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_STF}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_SCO}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_SCF}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_OBCO}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_OBCF}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_EWS}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_EWSF}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_PWDHI}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_PWDOC}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_PWDVI}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_PWDID}}</td>
+                                            <td>{{form.MPPMCL_ELECTRICAL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>22</td>
+                                            <td >MPPMCL</td>
+                                            <td >Civil</td>
+                                            <td>{{form.MPPMCL_CIVIL_URO}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_URF}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_STO}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_STF}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_SCO}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_SCF}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_OBCO}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_OBCF}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_EWS}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_EWSF}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_PWDHI}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_PWDOC}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_PWDVI}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_PWDID}}</td>
+                                            <td>{{form.MPPMCL_CIVIL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>23</td>
+                                            <td >MPPMCL</td>
+                                            <td >IT</td>
+                                            <td>{{form.MPPMCL_IT_URO}}</td>
+                                            <td>{{form.MPPMCL_IT_URF}}</td>
+                                            <td>{{form.MPPMCL_IT_STO}}</td>
+                                            <td>{{form.MPPMCL_IT_STF}}</td>
+                                            <td>{{form.MPPMCL_IT_SCO}}</td>
+                                            <td>{{form.MPPMCL_IT_SCF}}</td>
+                                            <td>{{form.MPPMCL_IT_OBCO}}</td>
+                                            <td>{{form.MPPMCL_IT_OBCF}}</td>
+                                            <td>{{form.MPPMCL_IT_EWS}}</td>
+                                            <td>{{form.MPPMCL_IT_EWSF}}</td>
+                                            <td>{{form.MPPMCL_IT_PWDHI}}</td>
+                                            <td>{{form.MPPMCL_IT_PWDOC}}</td>
+                                            <td>{{form.MPPMCL_IT_PWDVI}}</td>
+                                            <td>{{form.MPPMCL_IT_PWDID}}</td>
+                                            <td>{{form.MPPMCL_IT_TOTAL}}</td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>24</td>
+                                            <td >MPPMCL</td>
+                                            <td >Mechanical</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_URO}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_URF}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_STO}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_STF}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_SCO}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_SCF}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_OBCO}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_OBCF}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_EWS}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_EWSF}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_PWDHI}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_PWDOC}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_PWDVI}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_PWDID}}</td>
+                                            <td>{{form.MPPMCL_MECHANICAL_TOTAL}}</td>
+                                        
+                                    </tr>
+                                   
+                                  
+                                </tbody>
+                                
+                               
+                            </table>
+
+                           
+                            <!-- <div class="alert alert-warning">
+                                <strong>Oh Snap!</strong> No School Available.
+                            </div> -->
+                        
+                        </div>
+
+                    </div>
+                     <div align="center"><button class="btn-round" style="background: #2e3092; color: white;">Submit</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+     <?php include 'includes/style.php';?>
+         <style>
+      
+input[type=file]{
+padding:10px;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -30px;
+    position: relative;
+    margin-right: 10px;
+    z-index: 2;
+    font-size: large;
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function myfun(){
+        var a=document.getElementById("mobilenumber").value;
+        if(a==""){
+          document.getElementById('messages').innerHTML="**please fill mobile mobile_number";
+          return false;
+        }
+        if(isNaN(a)){
+          document.getElementById('messages').innerHTML="**enter only numeric value";
+          return false;
+
+        }
+        if (a.length<10){
+          document.getElementById("messages").innerHTML="**enter ten Digit number";
+          return false;
+        }
+        if (a.length>10){
+          document.getElementById("messages").innerHTML="**number is more then ten Digit";
+          return false;
+        }
+        if((a.charAt(0)!=9) && (a.charAt(0)!=8) && (a.charAt(0)!=7) && (a.charAt(0)!=6)){
+          document.getElementById('messages').innerHTML="** mobile Number start with 9,8,7,6";
+          return false;
+        }
+      }
+    </script>
+      <?php include 'includes/header.php';?>
+    <!--include search-sidebar-->
+    <div class="ps-page--signup" id="signup-freelancer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
+            <div class="ps-page__left"><img src="{% static 'img/pages/account/signup-freelancer.png' %}" alt="">
+              <p>Already user?<a href="/singin/"> Sign in</a></p>
+               <!--<p><a href="signup-employee.php">Sign Up Using As A Employee</a></p>-->
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
+            <form class="ps-form--signup-freelancer" onsubmit="return myfun()" method="post" action="/singup/">
+              {% csrf_token %}
+              <div class="ps-form__header">
+                <h4>Sign up for Registraction.</h4>
+                <!-- <p>Choose one of the following sign up methods.</p>
+                <div class="ps-form__method"><a class="ps-btn ps-btn--facebook" href="#"><i class="fa fa-facebook"></i> With Facebook</a><a class="ps-btn ps-btn--google" href="#"><i class="fa fa-google-plus"></i> With Google +</a></div>
+             
+              </div> -->
+              <div class="ps-form__content">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="firstname"  placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="lastname" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="Email" name="Email" placeholder="Enter your email address" autocomplete="off" required>
+                </div>
+                 <div class="form-group">
+                  <input class="form-control" type="text" id='mobilenumber' name="mobile_number" placeholder="Enter your mobile number" value="" autocomplete="off" > 
+                  <span id='messages'></span>
+                </div>
+                <div class="form-group">
+                  <input id="password-field" class="form-control" type="password" name="password" placeholder="Enter your password" autocomplete="off" required>
+                  <span toggle="password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+
+    
+                <p><i class="fa fa-shield"></i> Your passwords at Dailyproject are encrypted and secured</p>
+                <div class="ps-checkbox ps-checkbox--circle">
+                  <input class="form-control" type="checkbox" id="newsletter" name="newsletters"/>
+                  <label for="newsletter">I would like to receive weekly and monthly newsletters from
+Dailyproject</label>
+                </div>
+
+              </div>
+              <div class="ps-form__footer">
+                <input type="hidden" name="addFreelancer" value="addFreelancer">
+                <input type="hidden" name="image" value="1.jpg">
+                <button type="submit" class="ps-btn ps-btn--fullwidth ps-btn--gradient submitButton">Sign Up</button>
+                <p>By registering you confirm that you accept the <br><a href="#"> Terms and Conditions</a> and<a href="#"> Privacy Policy</a></p>
+              </div>
+            </form>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php include 'includes/footer.php';?>
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    
+    <!-- Plugins-->
+   
+    </script>
+  </body>
+
+
+{% endblock %}

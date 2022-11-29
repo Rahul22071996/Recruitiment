@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Loading...</title>
+    </head>
+  
+    <body onload="document.payuForm.submit()">
+        <form action='https://secure.payu.in/_payment'  method='post' name="payuForm">
+            <input type="hidden" name="key" value="{{key}}" />
+            <input type="hidden" name="txnid" value="{{txnid}}" readonly/>
+            <input type="hidden" name="amount" value="{{amount}}" />
+            <input type="hidden" name="productinfo" value="{{product}}" />
+             <input type="hidden" name="firstname" value="{{name}}" />
+              <input type="hidden" name="email" value="{{email}}" />
+            <input type="hidden" name="furl" value="http://127.0.0.1:8000/payu/failure/" /></td>
+           
+            <input type="hidden" name="lastname" value="{{last_name}}" />
+            <input type="hidden" name="phone" value="{{number}}" />
+            <input type="hidden" name="hash" value="{{posted}}" />
+            <input type="hidden" name="surl" value="http://127.0.0.1:8000/payment/success/" />
+            
+        </form>
+    </body>
+    </html> 
+
+    <!-- https://secure.payu.in/_payment  this is for production --> 
+    <!-- https://test.payu.in/_payment this is for testing -->

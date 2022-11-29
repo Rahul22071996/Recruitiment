@@ -1,0 +1,622 @@
+{% extends 'dashbord.html'%}
+{% block section %}
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <h2>Vacancy Position</h2>
+            </div>            
+            <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
+              <button onclick="move('freelancer-add.php');" class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="<?php echo 'https://'.site_url ;?>"><i class="zmdi zmdi-home"></i> </a></li>
+                    <li class="breadcrumb-item active" style="color: white;">Vacancy Position</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">            
+            <div class="col-lg-12">
+                <div class="card">                   
+                    <div class="body">
+                        <div class="col-md-12" ><p style="background: #2e3092; text-align: center; color: white;" >Add Position</p>
+                </div>
+                 <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Name of Exam</label>
+                 <input class="form-control" type="text" placeholder="Enter Name of Exam " name="Name_of_Exam">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Advertisement</label>
+                 <input class="form-control" type="text" placeholder="Enter Advertisement Number" name="Advertisement"  id="Advertisement" >
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Start Date</label>
+                 <input class="form-control" type="Date" placeholder="Start Date of Exam " name="Start_Date"  id="Start_Date" >
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">End Date</label>
+                 <input class="form-control" type="Date" placeholder="End Date of Exam " name="End_Date"  id="End_Date" >
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">Advertisement Pdf</label>
+                 <input class="form-control" type="file" placeholder="HSC 10th" name="Advertisement_Pdf"  id="Advertisement_Pdf" >
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                
+            </div>
+                        <div class="table-responsive">
+
+                            
+                            <table class="table td_2  js-basic-example dataTable vcenter">
+                               
+                                <thead >
+                                    <tr style="background: #2e3092;">
+                                        <th style="color: white;">#</th>
+                                        <th style="color: white;">Company Name</th>
+                                        <th style="color: white;">Stream Name</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;UR O&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;URF&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;STO&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;STF&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;SCO&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;&nbsp;SCF&nbsp;&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;OBCO&nbsp;&nbsp;</th>
+                                        <th style="color: white;">&nbsp;&nbsp;OBCF&nbsp;&nbsp;</th>
+                                         <th style="color: white;">&nbsp;&nbsp;EWS&nbsp;&nbsp;</th>
+                                          <th style="color: white;">&nbsp;&nbsp;EWSF&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;PWDHI&nbsp;&nbsp;</th>
+                                           <th style="color: white;"> &nbsp;&nbsp;PWDOC&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;PWDVI&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;PWDID&nbsp;&nbsp;</th>
+                                           <th style="color: white;">&nbsp;&nbsp;TOTAL&nbsp;&nbsp;</th>
+
+                                        </tr>
+                                </thead>  
+                               
+                                
+                                <tbody>
+                                   
+                                    <tr >
+                                            <td>1</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >Electrical</td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Electrical_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Electrical_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Electrical_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Electrical_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Electrical_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>2</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >Civil</td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Civil_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Civil_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Civil_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Civil_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Civil_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>3</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >IT</td>
+                                             <td><input type="text" class="form-control" name="BHOPAL_It_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_It_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_It_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_It_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_It_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>4</td>
+                                            <td >MPMKVVCL BHOPAL</td>
+                                            <td >Mechanical</td>
+                                             <td><input type="text" class="form-control" name="BHOPAL_Mechanical_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Mechanical_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Mechanical_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="BHOPAL_Mechanical_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="BHOPAL_Mechanical_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>5</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >Electrical</td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Electrical_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Electrical_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Electrical_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Electrical_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Electrical_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>6</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >Civil</td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Civil_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Civil_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Civil_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Civil_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Civil_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>7</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >IT</td>
+                                           <td><input type="text" class="form-control" name="JABALPUR_It_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_It_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_It_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_It_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_It_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>8</td>
+                                            <td >MPMKVVCL JABALPUR</td>
+                                            <td >Mechanical</td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Mechanical_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Mechanical_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Mechanical_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="JABALPUR_Mechanical_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="JABALPUR_Mechanical_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>9</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >Electrical</td>
+                                            <td><input type="text" class="form-control" name="INDORE_Electrical_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Electrical_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Electrical_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Electrical_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Electrical_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>10</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >Civil</td>
+                                            <td><input type="text" class="form-control" name="INDORE_Civil_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Civil_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Civil_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Civil_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Civil_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>11</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >IT</td>
+                                           <td><input type="text" class="form-control" name="INDORE_It_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_It_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_It_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_It_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_It_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>12</td>
+                                            <td >MPMKVVCL INDORE</td>
+                                            <td >Mechanical</td>
+                                            <td><input type="text" class="form-control" name="INDORE_Mechanical_URO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_URF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Mechanical_STO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_STF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_SCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_SCF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_OBCO" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_OBCF" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Mechanical_EWS" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_EWSF" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_PWDHI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_PWDOC" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_PWDVI" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" name="INDORE_Mechanical_PWDID" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" name="INDORE_Mechanical_TOTAL" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>13</td>
+                                            <td >MPGENCO</td>
+                                            <td >Electrical</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>14</td>
+                                            <td >MPGENCO</td>
+                                            <td >Civil</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>15</td>
+                                            <td >MPGENCO</td>
+                                            <td >IT</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>16</td>
+                                            <td >MPGENCO</td>
+                                            <td >Mechanical</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>17</td>
+                                            <td >MPTRANSCO </td>
+                                            <td >Electrical</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>18</td>
+                                            <td >MPTRANSCO</td>
+                                            <td >Civil</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>19</td>
+                                            <td >MPTRANSCO</td>
+                                            <td >IT</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>20</td>
+                                            <td >MPTRANSCO</td>
+                                            <td >Mechanical</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>21</td>
+                                            <td >MPPMCL</td>
+                                            <td >Electrical</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>22</td>
+                                            <td >MPPMCL</td>
+                                            <td >Civil</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>23</td>
+                                            <td >MPPMCL</td>
+                                            <td >IT</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                    <tr >
+                                            <td>24</td>
+                                            <td >MPPMCL</td>
+                                            <td >Mechanical</td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td ><input type="text" class="form-control" placeholder="0"></td>
+                                            <td><input type="text" class="form-control" placeholder="0"></td>
+                                        
+                                    </tr>
+                                   
+                                  
+                                </tbody>
+                                
+                               
+                            </table>
+
+                           
+                            <!-- <div class="alert alert-warning">
+                                <strong>Oh Snap!</strong> No School Available.
+                            </div> -->
+                        
+                        </div>
+
+                    </div>
+                     <div align="center"><button class="btn-round" style="background: #2e3092; color: white;">Submit</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

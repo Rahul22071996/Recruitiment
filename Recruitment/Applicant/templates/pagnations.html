@@ -1,0 +1,115 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+  </head>
+  <body>
+      
+    <!--include search-sidebar-->
+    <div class="ps-page--blog">
+      <div class="ps-page__header"></div>
+      <div class="ps-page__content">
+        <!--include modules/blog-slider-grid-->
+        <div class="ps-blog ps-blog--grid">
+          <div class="container">
+            <div class="ps-blog__header">
+              <ul class="ps-blog__categories">
+                <!-- {% for cate in cate_data%}
+                <li class="active"><a href="{{curl}}blog">{{cate.category}}</a></li>
+                {% endfor %} -->
+              </ul>
+            </div>
+          </div>
+          <div class="ps-blog__content">
+            <div class="masonry-wrapper" data-col-lg="4" data-col-md="3" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
+              <div class="ps-masonry ps-image-loaded">
+                <div class="grid-sizer">
+                  <div class="grid-item">
+                    <div class="grid-item__content-wrapper">
+                              <div class="ps-post ps-animate">
+                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="#"></a><img src="{% static 'img/blog/blog-grid/1.jpg' %}" alt=""></div>
+                                <div class="ps-post__content">
+                                  <div class="ps-post__meta"><span class="highlight">August 9, 2019</span><span>By<a href="#"> John kook</a></span></div><a class="ps-post__title" href="#">Class aptent taciti sociosqu ad litora torquent per conubia</a><a class="ps-post__morelink" href="#">Continue Reading</a>
+                                </div>
+                              </div>
+                    </div>
+                  </div>
+                 
+                {% for blog in  blogData %} 
+               
+                {% if blog.status == 1%}
+               
+          
+                  <div class="grid-item">
+                    <div class="grid-item__content-wrapper">
+                              <div class="ps-post ps-animate">
+                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="{{curl}}blog_details/{{blog.id}}"></a><img src="{{curl}}Dailyadmin{{blog.Image.url}}" alt="" height="310px" width="300px"></div>
+                                <div class="ps-post__content">
+                                  <div class="ps-post__meta"><span class="highlight">{{blog.date}}</span><span>By<a href="{{curl}}blog_details/{{blog.id}}"> {{blog.By}}</a></span></div>
+                                  <a class="ps-post__title" href="{{curl}}blog_details/{{blog.id}}">{{blog.Description | truncatechars:50 |safe}}</a><a class="ps-post__morelink" href="#">Continue Reading</a>
+                                </div>
+                              </div>
+                    </div>
+                  </div>
+                  
+                  {% endif %}
+                 
+                  {% endfor %}
+                  
+                </div>
+            
+          </div>
+          <nav aria-label="page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          {%if page.has_previous %}
+                <a  class="page-link" href="?page {{page.previous_page_number}}">Previous</a>
+              
+          {% endif %}
+        </li>
+          <li class="page-item">
+            <a class="page-link">page {{page.number}} of {{page.paginator.num_pages}}</a>
+          </li>
+          <li class="page-item">
+          {%if page.has_next %}
+                <a  class="page-link" href="?page {{page.next_page_number}}">next</a>
+              
+          {% endif %}
+        </li>
+  
+      </ul>
+    </nav>
+          <div class="ps-blog__footer">
+            <div class="container"><a class="ps-link--viewmore" href="#"><span class="ps-icon--dots"><i></i></span> View More</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    
+    <!-- Plugins-->
+     
+  </body>
+
+
+</html>
+{% endblock %}

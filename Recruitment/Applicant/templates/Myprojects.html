@@ -1,0 +1,96 @@
+{% extends 'basee.html'%}
+{% block container %}
+
+{% load static %}
+{% block header %}
+{% endblock %}
+
+     <body>
+<header class="header header--signin" data-sticky="false">
+    <div class="header__left">
+        <a class="ps-logo" href="{{curl}}"><img src="{% static 'img/new/mpcz-favicon.png' %}" alt="" style="width:70px;height:auto;"></a><a class="header__link" href="{{curl}}brower_jobs/"><i class="athena-archive"></i> Browers Jobs</a></div>
+
+</header>
+ 
+    <div class="ps-page" id="dashboard">
+      <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <li class="active"><a href="{{curl}}my_project/">My Projects</a></li>
+          <li><a href="{{curl}}my_profile/">My Profile</a></li>
+         
+        </ul>
+      </nav>
+      <div class="ps-dashboard ps-section--sidebar">
+        <div class="container">
+           <div class="ps-section__container" style="margin-top: 5%;">
+            <div class="ps-section__content">
+              <div class="ps-my-project">
+                 {% for message in messages %}
+              
+        <h3><font color="Green">{{message}}</font></h3>
+        {% endfor %}
+                <h3 class="ps-heading mb-40">My Projects</h3>
+                
+               
+                {% for pro in assingpro%}
+                
+                {% if user.username == pro.assignuser%}
+                <div class="ps-job ps-job--editable">
+                  <div class="ps-job__thumbnail"><a href="#"><img src="{{curl}}media/{{pro.Image}}" alt=""></a></div>
+                  <div class="ps-job__content"><a class="ps-job__title" href="#">{{pro.ProjectName}}</a>
+                    <p>{{pro.CompanyName}}</p>
+                    <p><strong>{{pro.skills}}</strong> {{pro.amount}} · {{pro.Duration}}</p>
+                    <p><i class="fa fa-map-marker"></i>  {{pro.city}}, {{pro.Country}}</p>
+                    <div class="ps-job__action"><a class="ps-btn ps-btn--outline ps-btn--sm" href="{{curl}}assignDelete/{{pro.id}}">Delete</a><div>{% if pro.status == 0 %} Status <font color="Red">pending</font>{% elif pro.status == 1 %}<font color="Green">Assign</font>{% elif pro.status == 2 %}<font color="Green">Complete</font>{%endif%}</div></div>
+                  </div>
+                </div>
+                                {% endif %}
+               
+                {% endfor %}
+              </div>
+            </div>
+            <div class="ps-section__sidebar">
+              <aside class="widget widget_profile widget_progress">
+                <div class="ps-block--user">
+                  <div class="ps-block__thumbnail"><img src="{% static 'images/freelancer_profile/1.jpg' %}" alt=""></div>
+                  <div class="ps-block__content">
+                    <p><strong>WelCome back</strong></p>
+                    <h4>{{user}}</h4><a href="{{curl}}genralinformation/">View your profile<i class="fa fa-caret-right"></i></a>
+                  </div>
+                </div>
+                 <a href="{{curl}}logout/" class="ps-btn ps-btn--gradient ps-btn--sm" type="reset">Logout</a>
+         
+              </aside>
+              <!-- <aside class="widget widget_profile widget_list">
+                <h3 class="widget-title">Other Links</h3>
+                <ul class="ps-list">
+                  <li><a href="#">Trending Project</a></li>
+                  <li><a href="#">Shortlisted Project</a></li>
+
+         
+                </ul>
+              </aside> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
+      <div class="ps-search__content">
+        <form class="ps-form--primary-search" action="do_action" method="post">
+          <input class="form-control" type="text" placeholder="Search for...">
+          <button><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Plugins-->
+ {% endblock %}     

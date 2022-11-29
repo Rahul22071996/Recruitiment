@@ -1,0 +1,60 @@
+{% extends 'dashbord.html'%}
+{% load static %}
+ {% block all %}
+ {% endblock %}
+ {% block section %}
+<html lang="en">
+<head>
+    
+</head>
+
+<body class="theme-purple authentication sidebar-collapse">
+
+<div class="page-header">
+    <div class="page-header-image" style="background-image:url({% static 'images/background/loginpage.jpg' %})"></div>
+    <div class="container">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+                <form  method="POST" action="/Recuritment/admin/login/">
+                     {% csrf_token %}
+                    <div class="header">
+                        <div class="logo-container" style="width: 300px;">
+                            <img src="images/logo/" alt="">
+                        </div>
+                        <h5>Log in</h5>
+                    </div>
+                    <div class="content">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="username" autocomplete="off" placeholder="Enter User Name" required>
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-account-circle"></i>
+                            </span>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control"   required />
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-lock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="footer text-center">
+                        <input type="hidden" name="adminLogin" value="adminLogin">
+                        <input type="hidden" name="currentPage" value="">
+                        <button type="submit" class="btn btn-primary btn-round btn-lg btn-block submitButton">SIGN IN</button>
+                        <!-- <h5><a href="forgot-password.html" class="link">Forgot Password?</a></h5> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy;
+                
+                <span>Designed by <a href="javascript:;" target="_blank" style="color: pink;">MPMKVVCL</a></span>
+            </div>
+        </div>
+    </footer>
+</div>
+ {% endblock %}

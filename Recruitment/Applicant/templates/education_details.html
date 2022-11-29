@@ -1,0 +1,351 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+
+<body>
+    <style type="text/css">
+      .switch-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #EC008B;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+  max-width: 600px;
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+  line-height: 1.625;
+  margin: 8px auto;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+    </style>
+      
+   
+    <div class="ps-page">
+      
+      <div class="ps-about-business ps-contact-us">
+        <div class="container">
+           <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <li ><a href="#">PERSONAL DETAILS</a></li>
+          <li ><a href="#">OTHER DETAILS</a></li>
+          <li class="active"><a href="#">EDUCATION</a></li>
+          <li><a href="#">ADDRESS</a></li>
+          <li><a href="#">BANK DETAILS</a></li>
+          <li><a href="#">DOCUMENT UPLOAD</a></li>
+          <li><a href="#">CHOICE FILLING</a></li>
+         
+        </ul>
+      </nav>
+          <br>
+          <br>
+          <div class="container">
+
+           
+            <form class="ps-form--contact" method="POST"  action="/education/details/" >
+              {% csrf_token %}
+
+              <div class="row">
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">CLASS / GRADE <input type="hidden" id="dob" value="{{DOB.DATE_OF_BIRTH|date:'Y-m-d'}}">
+                      <input type="hidden" id="gender" value="{{DOB.CANDIDATE_GENDER}}"></label>
+                 <input class="form-control" type="text"  value="HSC 10th"  disabled="">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">SUBJECT</label>
+                   <input class="form-control" type="text" placeholder="Subject" name="HSC_SUBJECT" value="{{Education_Data.HSC_SUBJECT}}" style="text-transform: uppercase;" onkeypress="return (event.charCode > 64 && event.charCode < 91)  || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" required>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">PERCENTAGE</label>
+                   <input class="form-control" type="text" placeholder="Percentage" name="HSC_PERCENTAGE" value="{{Education_Data.HSC_PERCENTAGE}}" required >
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">PASSING YEAR</label>
+                   <!-- <input class="form-control" type="text" placeholder="Passing Year" name="HSC_PASSING_YEAR" value="{{Education_Data.HSC_PASSING_YEAR}}"> -->
+                   <select class="form-control" name="HSC_PASSING_YEAR" onchange="year_change_12();" id="ddlYears" required>
+                      <option value="">--Select Year--</option>
+                    </select>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">HSSC(12th)</label> -->
+                 <input class="form-control" type="text" value="HSSC 12th"  disabled="">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">SUBJECT</label> -->
+                   <input class="form-control" type="text" placeholder="Subject" name="HSSC_SUBJECT" value="{{Education_Data.HSSC_SUBJECT}}" style="text-transform: uppercase;" onkeypress="return (event.charCode > 64 && event.charCode < 91)  || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" required>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">PERCENTAGE / CGPA</label> -->
+                   <input class="form-control" type="text" placeholder="Percentage" name="HSSC_PERCENTAGE" value="{{Education_Data.HSSC_PERCENTAGE}}" required>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">PASSING YEAR</label> -->
+                   <!-- <input class="form-control" type="text" placeholder="Passing Year" name="HSSC_PASSING_YEAR" value="{{Education_Data.HSSC_PASSING_YEAR}}"> -->
+                    <select class="form-control" name="HSSC_PASSING_YEAR" onchange="year_change_for_graduation();" id="year_12" required>
+                      <option value="">--Select Year--</option>
+                    </select>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">Graduation(UG)</label> -->
+                 <input class="form-control" type="text" value="GRADUATION" disabled="">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">SUBJECT</label> -->
+                   <input class="form-control" type="text" placeholder="Subject" name="GRADUATION_SUBJECT"  value="{{Education_Data.GRADUATION_SUBJECT}}" style="text-transform: uppercase;" onkeypress="return (event.charCode > 64 && event.charCode < 91)  || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" required>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">PERCENTAGE / CGPA</label> -->
+                   <input class="form-control" type="text" placeholder="Percentage" name="GRADUATION_PERCENTAGE" value="{{Education_Data.GRADUATION_PERCENTAGE}}" required>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">PASSING YEAR</label> -->
+                  <!--  <input class="form-control" type="text" placeholder="Passing Year" name="GRADUATION_PASSING_YEAR" value="{{Education_Data.GRADUATION_PASSING_YEAR}}" > -->
+                    <select class="form-control" name="GRADUATION_PASSING_YEAR" onchange="year_change_for_post_graduation();" id="year_GRADUATION">
+                      <option value="">--Select Year--</option>
+                    </select>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">Post Graduation(PG)</label> -->
+                 <input class="form-control" type="text" value="POST GRADUATION" disabled="">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">SUBJECT</label> -->
+                   <input class="form-control" type="text" placeholder="Subject" name="POST_GRADUATION_SUBJECT" value="{{Education_Data.POST_GRADUATION_SUBJECT}}" style="text-transform: uppercase;" onkeypress="return (event.charCode > 64 && event.charCode < 91)  || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">PERCENTAGE / CGPA</label> -->
+                   <input class="form-control" type="text" placeholder="Percentage" name="POST_GRADUATION_PERCENTAGE" value="{{Education_Data.POST_GRADUATION_PERCENTAGE}}">
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 ">
+                  <div class="form-group">
+                    <!-- <label style="font-weight: bold;">PASSING YEAR</label> -->
+                   <!-- <input class="form-control" type="text" placeholder="Passing Year" name="POST_PASSING_YEAR" value="{{Education_Data.POST_PASSING_YEAR}}"> -->
+                   <select class="form-control" name="POST_PASSING_YEAR" id="year_POST_PASSING">
+                      <option value="">--Select Year--</option>
+                    </select>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+
+               
+                
+                
+               
+                
+                
+                
+               
+              
+              
+               
+                <input type="hidden" name="company_token" value="{{res}}">
+              </div>
+              <div class="ps-form__submit">
+                 <input type="hidden" name="bussiness_inquire" value="bussiness_inquire">
+                  <a href="/other/details/" class="btn ps-btn ps-btn--gradient  me-2 btn-lg" type="reset" style="color: white;">Previous</a>
+                 
+                <button class="ps-btn getSubmitButton ps-btn--gradient" style="float: right;">&nbsp;&nbsp; Next &nbsp;&nbsp;</button>
+              
+
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <script type="text/javascript">
+      window.onload = function () {
+        //Reference the DropDownList.
+        var ddlYears = document.getElementById("ddlYears");
+
+        //Determine the Current Year.
+        var currentYear = (new Date()).getFullYear();
+
+        //Loop and add the Year values to DropDownList.
+        for (var i = 1985; i <= currentYear; i++) {
+          var option = document.createElement("OPTION");
+          option.innerHTML = i;
+          option.value = i;
+          ddlYears.appendChild(option);
+        }
+      };
+
+      function year_change_12(){
+
+        var ddlYears = $('#ddlYears').val();
+        $('#year_12').empty();
+        //Determine the Current Year.
+        var currentYear = (new Date()).getFullYear();
+        var start_cnt = Number(ddlYears)+1;
+        if (start_cnt > 2022) {
+          var option = document.createElement("OPTION");
+          option.innerHTML = 'NA';
+          option.value = 'NA';
+            year_12.appendChild(option);
+        }else{
+          //Loop and add the Year values to DropDownList.
+          var option = document.createElement("OPTION");
+          option.innerHTML = '--Select Year--';
+          option.value = '';
+          year_12.appendChild(option);
+          for (var i = start_cnt; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            year_12.appendChild(option);
+          }
+        }
+      }
+
+      function year_change_for_graduation(){
+
+        var year_12 = $('#year_12').val();
+        $('#year_GRADUATION').empty();
+        //Determine the Current Year.
+        var currentYear = (new Date()).getFullYear();
+        var start_cnt = Number(year_12)+1;
+        if (start_cnt > 2022) {
+          var option = document.createElement("OPTION");
+          option.innerHTML = 'NA';
+          option.value = 'NA';
+            year_GRADUATION.appendChild(option);
+        }else{
+          //Loop and add the Year values to DropDownList.
+          var option = document.createElement("OPTION");
+          option.innerHTML = '--Select Year--';
+          option.value = '';
+          year_GRADUATION.appendChild(option);
+          for (var i = start_cnt; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            year_GRADUATION.appendChild(option);
+          }
+        }
+      }
+
+      function year_change_for_post_graduation(){
+
+        var year_GRADUATION = $('#year_GRADUATION').val();
+        $('#year_POST_PASSING').empty();
+        //Determine the Current Year.
+        var currentYear = (new Date()).getFullYear();
+        var start_cnt = Number(year_GRADUATION)+1;
+        if (start_cnt > 2022) {
+          var option = document.createElement("OPTION");
+          option.innerHTML = 'NA';
+          option.value = 'NA';
+            year_POST_PASSING.appendChild(option);
+        }else{
+          //Loop and add the Year values to DropDownList.
+          var option = document.createElement("OPTION");
+          option.innerHTML = '--Select Year--';
+          option.value = '';
+          year_POST_PASSING.appendChild(option);
+          for (var i = start_cnt; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            year_POST_PASSING.appendChild(option);
+          }
+        }
+      }
+    </script>
+  </body>
+{% endblock %}

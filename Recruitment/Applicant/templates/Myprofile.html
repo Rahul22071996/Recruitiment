@@ -1,0 +1,121 @@
+{% extends 'basee.html'%}
+{% block container %}
+
+{% load static %}
+{% block header %}
+{% endblock %}
+
+
+  <body>
+    <header class="header header--signin" data-sticky="false">
+    <div class="header__left">
+        <a class="ps-logo" href="/"><img src="{% static 'img/new/MP_Govt-removebg-preview.png' %}" alt="" style="width:50px;height:auto;"></a>
+      </div>
+</header>
+      <!--include search-sidebar-->
+    <div class="ps-page" id="dashboard">
+        <nav class="ps-navigation--dashboard">
+        <ul>
+          <!-- <li><a href="dashboard.php">Dashboard</a></li> -->
+           <li ><a href="/"> Home</a></li>
+          <li class="active"><a  href="/Advertisement/">Advertisement</a></li>
+          <li ><a href="/Apply/"> Apply</a></li>
+          <li ><a href="/UnpaidApplication/"> Pay Unpaid Application Form</a></li>
+          <li ><a href="/Application-Number/"> Application Number</a></li>
+         
+         <!--  <li><a href="feedback.html">Feedback</a></li> -->
+        </ul>
+      </nav>
+      <div class="ps-section--sidebar ps-layout">
+        <div class="container">
+          <div class="ps-section__container">
+            <div class="ps-section__content">
+     
+         <form class="ps-form--settings" action="index.html" method="get">
+                <figure>
+                  <h3 class="ps-heading--2">Advertisement /<span class="ps-highlight"> Advertisement</span></h3>
+                  <div class="row">
+                    {% for data in Vacancy %}
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>POST</label>
+                        <input class="form-control" type="text" placeholder="" value="{{data.Name_of_Exam}}" readonly="">
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>Advertisement No</label>
+                        <input class="form-control" type="text" placeholder="" value="{{data.Advertisement}}" readonly="">
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>Click to Dowanload Advertisement PDF</label>
+                       
+                       <a href="{{data.Advertisement_Pdf.url}}" target="blank"><i class="fa fa-file-pdf-o" style="font-size:50px;color:blue;"></i></a>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                      <div class="form-group">
+                        <label>Phone Number</label>
+                        
+                  
+                        <input class="form-control" type="text" placeholder="" value="{{user.userprofile.phone}}" readonly="">
+                        
+                      </div>
+                    </div> -->
+                 
+                    </div>
+                </figure>
+              
+              </form>
+            </div>
+            <div class="ps-section__sidebar">
+               <aside class="widget widget_profile widget_progress">
+                <div class="ps-block--user">
+                  <div class="ps-block__thumbnail"><img src="" alt=""></div>
+                  <div class="ps-block__content">
+                    <p><strong>Welcome back</strong></p>
+                    <h4>{{user}}</h4>
+                    <!-- <a href="#">View your profile<i class="fa fa-caret-right"></i></a> -->
+                  </div>
+                </div>
+                 {% if user.is_authenticated%}
+                <a href="/logout/" class="ps-btn ps-btn--gradient ps-btn--sm" type="reset" style="color: white;">Logout</a>
+                {% else %}
+                <a href="/singin/" class="ps-btn ps-btn--gradient ps-btn--sm" type="reset" style="color: white;">Login</a>
+                {% endif %}
+              
+              </aside>
+             <!--  <aside class="widget widget_profile widget_list">
+                <h3 class="widget-title">Settings</h3>
+                <ul class="ps-list">
+                  <li><a href="#">General infomation</a></li>
+                  <li><a href="#">Password</a></li>
+                  <li><a href="#">Edit Profile</a></li>
+
+                </ul>
+              </aside> -->
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
+      <div class="ps-search__content">
+        <form class="ps-form--primary-search" action="do_action" method="post">
+          <input class="form-control" type="text" placeholder="Search for...">
+          <button><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <!-- Plugins-->
+ {% endblock %}   

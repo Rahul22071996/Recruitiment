@@ -1,0 +1,1047 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+
+<body>
+ 
+</script>
+<!-- MARRIAGE DETAILS JAVA SCRIPT  START -->
+    <script type="text/javascript">
+
+        function candidate()
+        {
+            let radioYes = document.getElementById('radio-Married').value;
+            if (radioYes == "YES")
+            {
+              
+              let btn_1 = document.getElementById('Husband-wife')
+              let btn_2 = document.getElementById('number-of-child')
+              let btn_3 = document.getElementById('last-child-dob')
+              let btn_4 = document.getElementById('radio-twin1')
+              let btn_5 = document.getElementById('radio-twin')
+              let btn_6 = document.getElementById('radio-DIVORCED')
+              let btn_7 = document.getElementById('radio-DIVORCED1')
+
+              btn_1.disabled = false;
+              btn_2.disabled = false;
+              btn_3.disabled = false;
+              btn_4.disabled = false;
+              btn_5.disabled = false;
+              btn_6.disabled = false;
+              btn_7.disabled = false;
+              var gender = $('#gender').val();
+              if (gender=='MALE') {
+                btn_6.disabled = true;
+                btn_7.disabled = true;
+              }else{
+                btn_6.disabled = false;
+                btn_7.disabled = false;
+              }
+
+
+            }
+          else
+          {
+            console.log('all work proper')
+            let a = 2
+          }
+        }
+        function candidateNo()
+        {
+            let radioYes = document.getElementById('radio-Married1').value;
+            if (radioYes == "NO")
+            {
+              document.getElementById('Husband-wife').value="";
+              let btn_1 = document.getElementById('Husband-wife')
+              document.getElementById('number-of-child').value="";
+              let btn_2 = document.getElementById('number-of-child')
+              document.getElementById('last-child-dob').value=""
+              let btn_3 = document.getElementById('last-child-dob')
+              document.getElementById('radio-twin1').checked = false;
+              let btn_4 = document.getElementById('radio-twin1')
+              document.getElementById('radio-twin').checked = false;
+              let btn_5 = document.getElementById('radio-twin')
+              document.getElementById('radio-DIVORCED').checked = false;
+              let btn_6 = document.getElementById('radio-DIVORCED')
+              document.getElementById('radio-DIVORCED1').checked = false;
+              let btn_7 = document.getElementById('radio-DIVORCED1')
+              
+              btn_1.disabled = true;
+              btn_2.disabled = true;
+              btn_3.disabled = true;
+              btn_4.disabled = true;
+              btn_5.disabled = true;
+              btn_6.disabled = true;
+              btn_7.disabled = true;
+
+
+
+            }
+          else
+          {
+            console.log('all work proper')
+            let a = 2
+          }
+        }
+
+       
+    </script>
+
+ <!--  END MARRIAGE DETAILS -->
+<!--  DISABILITY DETAILS START -->
+<script type="text/javascript">
+  function disability()
+  {
+    let diono = document.getElementById('radio-CERTIFICATE1').value;
+    if (diono == "NO"){
+      document.getElementById('radio-PERCENT').checked=false;
+
+      let btn_1 = document.getElementById('radio-PERCENT')
+
+      document.getElementById('radio-PERCENT1').checked=false;
+      let btn_2 = document.getElementById('radio-PERCENT1')
+      document.getElementById('type-of-disability').value='';
+      let btn_3 = document.getElementById('type-of-disability')
+      document.getElementById('Percentage-of-Disability').value='';
+      let btn_4 = document.getElementById('Percentage-of-Disability')
+      btn_1.disabled = true;
+      btn_2.disabled = true;
+      btn_3.disabled = true;
+      btn_4.disabled = true;
+
+
+    }
+    else{
+      console.log('yes this is done')
+
+    }
+
+  }
+function disabilityno()
+  {
+    let diono = document.getElementById('radio-CERTIFICATE').value;
+    if (diono == "YES"){
+      
+
+      let btn_1 = document.getElementById('radio-PERCENT')
+
+     
+      let btn_2 = document.getElementById('radio-PERCENT1')
+      
+      let btn_3 = document.getElementById('type-of-disability')
+      
+      let btn_4 = document.getElementById('Percentage-of-Disability')
+      btn_1.disabled = false;
+      btn_2.disabled = false;
+      btn_3.disabled = false;
+      btn_4.disabled = false;
+
+
+    }
+    else{
+      console.log('yes this is done')
+
+    }
+
+  }
+</script>
+<!--  DISABILITY DETAILS END -->
+
+
+
+    <style type="text/css">
+      .switch-field {
+  display: flex; 
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #EC008B;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+  max-width: 600px;
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+  line-height: 1.625;
+  margin: 8px auto;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+    </style>
+      
+   
+    <div class="ps-page">
+      
+      <div class="ps-about-business ps-contact-us">
+        <div class="container">
+           <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <li ><a href="#">PERSONAL DETAILS</a></li>
+          <li class="active" ><a href="#">OTHER DETAILS</a></li>
+          <li><a href="#">EDUCTION</a></li>
+          <li><a href="#">ADDRESS</a></li>
+          <li><a href="#">BANK DETAILS</a></li>
+          <li><a href="#">DOCUMENT UPLOAD</a></li>
+          <li><a href="#">CHOICE FILLING</a></li>
+         
+        </ul>
+      </nav>
+          <br>
+          <br>
+          <div class="container">
+
+           
+            <form id="form1" class="ps-form--contact" method="POST"  action="/other/details/" >
+              {% csrf_token %}
+
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">NATIONALITY 
+                      <input type="hidden" id="dob" value="{{DOB.DATE_OF_BIRTH|date:'Y-m-d'}}">
+                      <input type="hidden" id="gender" value="{{DOB.CANDIDATE_GENDER}}">
+                      <input type="hidden" id="Department" value="{{DOB.IS_APPLICANT_A_DEPARTMENTAL_CANDIDATE}}">
+                      <input type="hidden" id="Posted" value="{{DOB.POSTED_SINCE|date:'Y-m-d'}}">
+                    </label>
+                   <div class="switch-field">
+                    <select class="form-control" onchange="check_nationality(this.value);" name="country"><option value="">Please Select</option>
+                      <option value="INDIAN" selected>Indian</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE IS A DOMICILE OF MADHYA PRADESH STATE ?</label>
+                   <div class="switch-field">
+                    {% if other_data.NATIVE_OF_MADHYA_PRADESH == "YES" %}
+                        <input type="radio" id="radio-one" onclick="mp_velid();" name="switch-one" value="YES" checked="" />
+                        <label for="radio-one">Yes</label>
+                    {% else %}
+                        <input type="radio" id="radio-one" onclick="mp_velid();" name="switch-one" value="YES" />
+                        <label for="radio-one">Yes</label>
+                    {% endif %}
+                     {% if other_data.NATIVE_OF_MADHYA_PRADESH == "NO" %}
+                        <input type="radio" id="radio-two" onclick="mp_velid();" name="switch-one" value="NO" checked="" />
+                        <label for="radio-two">No</label>
+                      {% else %}
+                        <input type="radio" id="radio-two" onclick="mp_velid();" name="switch-one" value="NO" />
+                        <label for="radio-two">No</label>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">CATEGORY </label>
+                    <div class="switch-field">
+                      {% if other_data.CATEGORY == "UR" %}
+                        <input type="radio" id="radio-three" onclick="obc_check();" name="switch-two" value="UR" checked=""  />
+                        <label for="radio-three">UR</label>
+                      {% else %}
+                        <input type="radio" id="radio-three" onclick="obc_check();" name="switch-two" value="UR"  />
+                        <label for="radio-three">UR</label>
+                      {% endif %}
+                      {% if other_data.CATEGORY == "SC" %} 
+                        <input type="radio" id="radio-four" onclick="obc_check();" name="switch-two" value="SC" checked="" />
+                        <label for="radio-four">SC</label>
+                      {% else %}
+                        <input type="radio" id="radio-four" onclick="obc_check();" name="switch-two" value="SC" />
+                        <label for="radio-four">SC</label>
+                      {% endif %}
+                      {% if other_data.CATEGORY == "ST" %}
+                        <input type="radio" id="radio-five" onclick="obc_check();" name="switch-two" value="ST"  checked="" />
+                        <label for="radio-five">ST</label>
+                      {% else %}
+                        <input type="radio" id="radio-five" onclick="obc_check();" name="switch-two" value="ST"  />
+                        <label for="radio-five">ST</label>
+                      {% endif %}
+                      {% if other_data.CATEGORY == "OBC" %}
+                        <input type="radio" id="radio-six" onclick="obc_check();" name="switch-two" value="OBC" checked="" />
+                        <label for="radio-six">OBC</label>
+                      {% else %}
+                         <input type="radio" id="radio-six" onclick="obc_check();" name="switch-two" value="OBC" />
+                          <label for="radio-six">OBC</label>
+                      {% endif %}
+                      {% if other_data.CATEGORY == "EWS" %}
+                        <input type="radio" id="radio-seven" onclick="obc_check();" name="switch-two" value="EWS" checked="" />
+                        <label for="radio-seven">EWS</label>
+                      {% else %}
+                          <input type="radio" id="radio-seven" onclick="obc_check();" name="switch-two" value="EWS"  />
+                        <label for="radio-seven">EWS</label>
+                      {% endif %}
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE BELONGS TO THE CREAMY LAYER</label>
+                     <div class="switch-field">
+                       {% if other_data.BELONGS_TO_CREAMY_LAYER == "YES" %}
+                        <input type="radio" id="radio-CREAMY" name="switch-CREAMY" value="YES"  checked="" />
+                        <label for="radio-CREAMY">YES</label>
+                       {% else %}
+                          <input type="radio" id="radio-CREAMY" name="switch-CREAMY" value="YES"  />
+                          <label for="radio-CREAMY">YES</label>
+                        {% endif %}
+                       {% if other_data.BELONGS_TO_CREAMY_LAYER == "NO" %}
+                          <input type="radio" id="radio-CREAMY1" name="switch-CREAMY" value="NO" checked="" />
+                          <label for="radio-CREAMY1">NO</label>
+                        {% else %}
+                            <input type="radio" id="radio-CREAMY1" name="switch-CREAMY" value="NO" />
+                          <label for="radio-CREAMY1">NO</label>
+                        {% endif %}
+
+                        
+                        
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <center><li ><a href="#" style="color:#2e3092;"><b>MARRIAGE DETAILS</b></a></li></center>
+         
+         
+         
+        </ul>
+      </nav>
+      <br>
+      <br>
+    </div>
+    
+
+                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">
+                                                IS CANDIDATES MARRIED ?
+                                            </label>
+                                            <div class="switch-field">
+                                                {% if other_data.IS_CANDIDATES_MARRIED == "YES" %}
+                                                <input id="radio-Married" name="switch-married" type="radio" value="YES" checked   onclick="candidate()" />
+                                                <label for="radio-Married">
+                                                    Yes
+                                                </label>
+                                                {% else %}
+                                                <input id="radio-Married" name="switch-married" type="radio" value="YES"   onclick="candidate()"/>
+                                                <label for="radio-Married">
+                                                    Yes
+                                                </label>
+                                                {% endif %}
+                                                {% if other_data.IS_CANDIDATES_MARRIED == "NO" %}
+                                                <input id="radio-Married1" name="switch-married" type="radio" value="NO" onclick="candidateNo()"  checked />
+                                                <label for="radio-Married1">
+                                                    No
+                                                </label>
+                                                {% else %}
+                                                 <input id="radio-Married1" name="switch-married" type="radio" value="NO" onclick="candidateNo()"/>
+                                                <label for="radio-Married1">
+                                                    No
+                                                </label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">
+                                                HUSBAND'S / WIFE'S NAME
+                                            </label>
+                                            <input class="form-control" name="H-W_Name" placeholder="Husband's/Wife's Name" type="name" value="{{other_data.HUSBAND_WIFE_NAME}}" id="Husband-wife">
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">
+                                                WHETHER THE CANDIDATE IS A WIDOW/DIVORCED/ABANDONED WOMAN
+                                            </label>
+                                            <div class="switch-field">
+                                            {% if other_data.CANDIDATE_IS_A_WIDOW_DIVORCED_ABANDONED_WOMAN == "YES" %}
+                                                <input id="radio-DIVORCED" name="switch-divorced" type="radio" value="YES" checked />
+                                                <label for="radio-DIVORCED" >
+                                                    Yes
+                                                </label>
+                                            {% else %}
+                                                <input id="radio-DIVORCED" name="switch-divorced" type="radio" value="YES"  />
+                                                <label for="radio-DIVORCED">
+                                                    Yes
+                                                </label>
+                                            {% endif %}
+                                            {% if other_data.CANDIDATE_IS_A_WIDOW_DIVORCED_ABANDONED_WOMAN == "NO" %}
+                                                <input id="radio-DIVORCED1" name="switch-divorced" type="radio" value="NO" checked />
+                                                <label for="radio-DIVORCED1">
+                                                    No
+                                                </label>
+                                            {% else %}
+                                                <input id="radio-DIVORCED1" name="switch-divorced" type="radio" value="NO"/>
+                                                <label for="radio-DIVORCED1">
+                                                    No
+                                                </label>
+                                            {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">
+                                                NUMBER OF SURVIVING CHILDREN
+                                            </label>
+                                            <select class="form-control" name="Total_Child" onchange="child_count_calculate(this.value);" id="number-of-child" required="">
+                                                <option value="" >Please Choose...</option>
+                                                <option value="0">
+                                                    0
+                                                </option>
+                                                <option value="1">
+                                                    1
+                                                </option>
+                                                <option value="2">
+                                                    2
+                                                </option>
+                                                <option value="3">
+                                                    3
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">
+                                                LAST CHILD'S DATE OF BIRTH(DD/MM/YYYY)
+                                            </label>
+                                            <input class="form-control" name="Child_Dob" placeholder="Husband's/Wife's Name" type="date" value="{{other_data.LAST_CHILD_DATE_OF_BIRTH|date:'Y-m-d'}}" id="last-child-dob" disabled >
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">
+                                                IS THE LAST CHILD TWIN
+                                            </label>
+                                            <div class="switch-field">
+                                                {% if other_data.IS_THE_LAST_CHILD_TWIN == "YES" %}
+                                                <input id="radio-twin" class="twin_check" name="switch-twin" type="radio" value="YES" disabled  checked/>
+                                                <label for="radio-twin">
+                                                    Yes
+                                                </label>
+                                                {% else %}
+                                                <input id="radio-twin" class="twin_check" name="switch-twin" type="radio" disabled value="YES" />
+                                                <label for="radio-twin">
+                                                    Yes
+                                                </label>
+                                                {% endif %}
+                                                {% if other_data.IS_THE_LAST_CHILD_TWIN == "NO" %}
+                                                <input id="radio-twin1" class="twin_check" name="switch-twin" type="radio" disabled value="NO"  checked/>
+                                                <label for="radio-twin1">
+                                                    No
+                                                </label>
+                                                {% else %}
+                                                <input id="radio-twin1" class="twin_check" name="switch-twin" type="radio" disabled value="NO" />
+                                                <label for="radio-twin1">
+                                                    No
+                                                </label>
+                                                {% endif %}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <center><li ><a href="#" style="color:#2e3092;"><b>DISABILITY DETAILS</b></a></li></center>
+         
+         
+         
+        </ul>
+      </nav>
+      <br>
+      <br>
+    </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE HAS A DISABILITY CERTIFICATE ISSUED BY THE COMPETENT AUTHORITY, DISTRICT MEDICAL BOARD </label>
+                    <div class="switch-field">
+                      {% if other_data.DISABILITY_CERTIFICATE == "YES" %}
+                        <input type="radio" id="radio-CERTIFICATE" name="switch-CERTIFICATE" value="YES" onclick="disabilityno()" checked="" />
+                        <label for="radio-CERTIFICATE">YES</label>
+                      {% else %}
+                          <input type="radio" id="radio-CERTIFICATE" name="switch-CERTIFICATE" onclick="disabilityno()" value="YES"  />
+                        <label for="radio-CERTIFICATE">YES</label>
+                      {% endif %}
+                      {% if other_data.DISABILITY_CERTIFICATE == "NO" %}
+                        <input type="radio" id="radio-CERTIFICATE1" name="switch-CERTIFICATE" value="NO" onclick="disability()" checked="" />
+                        <label for="radio-CERTIFICATE1">NO</label>
+                      {% else %}
+                          <input type="radio" id="radio-CERTIFICATE1" name="switch-CERTIFICATE" value="NO" onclick="disability()" />
+                        <label for="radio-CERTIFICATE1">NO</label>
+                      {% endif %}
+                        
+                        
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE HAS MINIMUM 40 PERCENT AND MORE DISABILITY</label>
+                   <div class="switch-field">
+                    {% if other_data.MINIMUM_40_PERCENT_DISABILITY == "YES" %}
+                        <input type="radio" id="radio-PERCENT" name="switch-PERCENT" value="YES" checked="" />
+                        <label for="radio-PERCENT">YES</label>
+                    {% else %}
+                        <input type="radio" id="radio-PERCENT" name="switch-PERCENT" value="YES"  />
+                        <label for="radio-PERCENT">YES</label>
+                    {% endif %}
+                    {% if other_data.MINIMUM_40_PERCENT_DISABILITY == "NO" %}                        
+                        <input type="radio" id="radio-PERCENT1" name="switch-PERCENT" value="NO" checked="" />
+                        <label for="radio-PERCENT1">NO</label>
+                    {% else %}
+                        <input type="radio" id="radio-PERCENT1" name="switch-PERCENT" value="NO" />
+                        <label for="radio-PERCENT1">NO</label>
+                    {% endif %}
+                        
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">TYPE OF DISABILITY</label>
+                   <select class="form-control" name="type-of-disability" id="type-of-disability" disabled>  <option>
+                                                        Please Select....
+                                                    </option>
+                                                    
+                                                    <option value="Fractured(OH)">
+                                                        Fractured(OH)
+                                                    </option>
+                                                    
+
+                 
+                                                    <option value="Vision Impaired(VH)">
+                                                        Vision Impaired(VH)
+                                                    </option>
+                                                    
+                 
+                                                    <option value="Hearing Impairment(HH)">
+                                                        Hearing Impairment(HH)
+                                                    </option>
+                                                    
+                 
+                                                    <option value="Multiple Disabilities(MD)">
+                                                        Multiple Disabilities(MD)
+                                                    </option></select>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> PERCENTAGE OF DISABILITY</label>
+                    <input class="form-control" type="text" placeholder="Enter Your Percentage" name="Percentage-of-Disability" value="{{other_data.PERCENTAGE_OF_DISABILITY}}" id="Percentage-of-Disability">
+                  </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <center><li ><a href="#" style="color:#2e3092;"><b>OTHER DETAILS</b></a></li></center>
+         
+         
+         
+        </ul>
+      </nav>
+      <br>
+      <br>
+    </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE HAS EVER BEEN PUNISHED WITH THE PUNISHMENT OF SEPARATION FROM SERVICE</label>
+                   <div class="switch-field">
+                    {% if other_data.CANDIDATE_PUNISHED == "YES" %}               
+                        <input type="radio" id="radio-PUNISHED" onclick="punished_check();" name="switch-PUNISHED" value="YES"  checked="" />
+                        <label for="radio-PUNISHED">YES</label>
+                    {% else %}
+                        <input type="radio" id="radio-PUNISHED" onclick="punished_check();" name="switch-PUNISHED" value="YES"  />
+                        <label for="radio-PUNISHED">YES</label>
+                    {% endif %}
+                    {% if other_data.CANDIDATE_PUNISHED == "NO" %}               
+                        <input type="radio" id="radio-PUNISHED1" onclick="punished_check();" name="switch-PUNISHED" value="NO"  checked="" />
+                        <label for="radio-PUNISHED1">NO</label>
+                     {% else %}
+                        <input type="radio" id="radio-PUNISHED1" onclick="punished_check();" name="switch-PUNISHED" value="NO" />
+                        <label for="radio-PUNISHED1">NO</label>
+                    {% endif %}
+                        
+    
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE IS IN DEBARRED PERIOD FROM ANY EXAMINATION OR SELECTION OF THE COMPANY</label>
+                    <div class="switch-field">
+                      {% if other_data.DEBARRED_PERIOD_FROM_ANY_EXAMINATION == "YES" %}  
+                        <input type="radio" id="radio-SELECTION" onclick="section_check();" name="switch-SELECTION" value="YES"  checked="" />
+                        <label for="radio-SELECTION">YES</label>
+                      {% else %}
+                           <input type="radio" id="radio-SELECTION" onclick="section_check();" name="switch-SELECTION" value="YES"  />
+                        <label for="radio-SELECTION">YES</label>
+                      {% endif %}
+                      {% if other_data.DEBARRED_PERIOD_FROM_ANY_EXAMINATION == "NO" %}  
+                        <input type="radio" id="radio-SELECTION1" onclick="section_check();" name="switch-SELECTION" value="NO" checked="" />
+                        <label for="radio-SELECTION1">NO</label>
+                        
+                      {% else %}
+                         <input type="radio" id="radio-SELECTION1" onclick="section_check();" name="switch-SELECTION" value="NO" />
+                        <label for="radio-SELECTION1">NO</label>
+                      {% endif %}
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE IS SERVING IN THE GOVERNMENT OF MADHYA PRADESH OR ITS NAGAR SAINIK / NIGAM / MANDAL / AUTONOMOUS INSTITUTIONS / HOME GUARDS ?</label>
+                   <div class="switch-field">
+                     {% if other_data.SERVING_IN_THE_GOVERNMENT == "YES" %}  
+                        <input type="radio" id="radio-SERVING"  name="switch-SERVING" value="YES"  checked="" />
+                        <label for="radio-SERVING">YES</label>
+                    {% else %}
+                        <input type="radio" id="radio-SERVING"  name="switch-SERVING" value="YES"  />
+                        <label for="radio-SERVING">YES</label>
+                        {% endif %}
+                     {% if other_data.SERVING_IN_THE_GOVERNMENT == "NO" %}  
+                        <input type="radio" id="radio-SERVING1"  name="switch-SERVING" value="NO" checked="" />
+                        <label for="radio-SERVING1">NO</label>
+                        
+                    {% else %}
+                    <input type="radio" id="radio-SERVING1"  name="switch-SERVING" value="NO" />
+                        <label for="radio-SERVING1">NO</label>
+                    {% endif %}
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">IS CANDIDATE HAVING A LIVE REGISTRATION IN THE EMPLOYMENT OFFICE OF MADHYA PRADESH STATE ?</label>
+                    <div class="switch-field">
+                      {% if other_data.LIVE_REGISTRATION_IN_THE_EMPLOYMENT_OFFICE == "YES" %}
+                        <input type="radio" id="radio-LIVEREGISTRATION" name="switch-LIVEREGISTRATION" value="YES" checked="" />
+                        <label for="radio-LIVEREGISTRATION">YES</label>
+                      {% else %}
+                        <input type="radio" id="radio-LIVEREGISTRATION" name="switch-LIVEREGISTRATION" value="YES" />
+                        <label for="radio-LIVEREGISTRATION">YES</label>
+                      {% endif %}
+                      {% if other_data.LIVE_REGISTRATION_IN_THE_EMPLOYMENT_OFFICE == "NO" %}
+                        <input type="radio" id="radio-LIVEREGISTRATION1" name="switch-LIVEREGISTRATION" value="NO" checked="" />
+                        <label for="radio-LIVEREGISTRATION1">NO</label>
+                        
+                        {% else %}
+                            <input type="radio" id="radio-LIVEREGISTRATION1" name="switch-LIVEREGISTRATION" value="NO" />
+                        <label for="radio-LIVEREGISTRATION1">NO</label>
+                      {% endif %}
+    
+                    </div>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE IS A REWARDED UPPER CASTE PARTNER UNDER THE INTER-CASTE MARRIAGE SCHEME OF THE DEPARTMENT OF SCHEDULED CASTES, SCHEDULED TRIBES AND BACKWARD CLASSES BY WELFARE DEPARTMENT OF MP GOVT.?</label>
+                    <div class="switch-field">
+                      {% if other_data.INTER_CASTE_MARRIAGE == "YES" %}
+                        <input type="radio" id="radio-Department" name="switch-Department" value="YES" checked="" />
+                        <label for="radio-Department">YES</label>
+                      {% else %}
+                        <input type="radio" id="radio-Department" name="switch-Department" value="YES" />
+                        <label for="radio-Department">YES</label>
+                      {% endif %}
+                      {% if other_data.INTER_CASTE_MARRIAGE == "NO" %}
+                        <input type="radio" id="radio-Department1" name="switch-Department" value="NO" checked="" />
+                        <label for="radio-Department1">NO</label>
+                        
+                        {% else %}
+                            <input type="radio" id="radio-Department1" name="switch-Department" value="NO" />
+                        <label for="radio-Department1">NO</label>
+                      {% endif %}
+    
+                    </div>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">IS THE CANDIDATE A VIKRAM AWARDEE SPORTSPERSON ?</label>
+                    <div class="switch-field">
+                      {% if other_data.VIKRAM_AWARDEE_SPORTSPERSON == "YES" %}
+                        <input type="radio" id="radio-Vikram" name="switch-Vikram" value="YES" checked="" />
+                        <label for="radio-Vikram">YES</label>
+                      {% else %}
+                        <input type="radio" id="radio-Vikram" name="switch-Vikram" value="YES" />
+                        <label for="radio-Vikram">YES</label>
+                      {% endif %}
+                      {% if other_data.VIKRAM_AWARDEE_SPORTSPERSON == "NO" %}
+                        <input type="radio" id="radio-Vikram1" name="switch-Vikram" value="NO" checked="" />
+                        <label for="radio-Vikram1">NO</label>
+                        
+                        {% else %}
+                            <input type="radio" id="radio-Vikram1" name="switch-Vikram" value="NO" />
+                        <label for="radio-Vikram1">NO</label>
+                      {% endif %}
+    
+                    </div>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">IS THE CANDIDATE A VIKRAM AWARDEE SPORTSPERSON ?</label>
+                    <div class="switch-field">
+                      {% if other_data.VIKRAM_AWARDEE_SPORTSPERSON == "YES" %}
+                        <input type="radio" id="radio-Vikram" name="switch-Vikram" value="YES" checked="" />
+                        <label for="radio-Vikram">YES</label>
+                      {% else %}
+                        <input type="radio" id="radio-Vikram" name="switch-Vikram" value="YES" />
+                        <label for="radio-Vikram">YES</label>
+                      {% endif %}
+                      {% if other_data.VIKRAM_AWARDEE_SPORTSPERSON == "NO" %}
+                        <input type="radio" id="radio-Vikram1" name="switch-Vikram" value="NO" checked="" />
+                        <label for="radio-Vikram1">NO</label>
+                        
+                        {% else %}
+                            <input type="radio" id="radio-Vikram1" name="switch-Vikram" value="NO" />
+                        <label for="radio-Vikram1">NO</label>
+                      {% endif %}
+    
+                    </div>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">WHETHER THE CANDIDATE IS AN EX-SERVICEMAN ?</label>
+                    <div class="switch-field">
+                      {% if other_data.EX_SERVICEMAN == "YES" %}
+                        <input type="radio" id="radio-EX-SERVICEMAN" onclick="x_server_check();" name="switch-EX-SERVICEMAN" value="YES" checked="" />
+                        <label for="radio-EX-SERVICEMAN">YES</label>
+                      {% else %}
+                        <input type="radio" id="radio-EX-SERVICEMAN" onclick="x_server_check();" name="switch-EX-SERVICEMAN" value="YES" />
+                        <label for="radio-EX-SERVICEMAN">YES</label>
+                      {% endif %}
+                      {% if other_data.EX_SERVICEMAN == "NO" %}
+                        <input type="radio" id="radio-EX-SERVICEMAN1" onclick="x_server_check();" name="switch-EX-SERVICEMAN" value="NO" checked="" />
+                        <label for="radio-EX-SERVICEMAN1">NO</label>
+                        
+                        {% else %}
+                            <input type="radio" id="radio-EX-SERVICEMAN1" onclick="x_server_check();" name="switch-EX-SERVICEMAN" value="NO" />
+                        <label for="radio-EX-SERVICEMAN1">NO</label>
+                      {% endif %}
+    
+                    </div>
+                    <span id="messages"></span>
+                  </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">PERIOD OF SERVICE IN YEARS</label>
+                   
+                      <input type="number" id="Service_Period" name="Service_Period" value="{{other_data.PERIOD_OF_SERVICE}}" placeholder="Enter Number of year" class="form-control">
+    
+                    
+                    <span id="messages"></span>
+                  </div>
+                </div>
+              
+              
+               
+                <input type="hidden" name="company_token" value="{{res}}">
+              </div>
+              <div class="ps-form__submit">
+                 <input type="hidden" name="bussiness_inquire" value="bussiness_inquire">
+                
+                <a href="/personal/details/" class="btn ps-btn ps-btn--gradient  me-2 btn-lg" type="reset" style="color: white;">Previous</a>
+                <button class="ps-btn getSubmitButton ps-btn--gradient"  id="save_btn" style="float: right;">Save</button>
+              
+
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <script type="text/javascript">
+    window.onload = function(){ 
+      candidate();
+      candidateNo();
+      mp_velid();
+      obc_check();
+      x_server_check();
+    }
+
+    function check_nationality(e){
+      if (e=='OTHER') {
+        alert('You are not eligible for this post.');
+        $('#save_btn').hide();
+      }else{
+        $('#save_btn').show();
+      }
+    }
+
+    function child_count_calculate(e){
+      if (e=='3') {
+        $('#last-child-dob').removeAttr('disabled');
+        $('.twin_check').removeAttr('disabled');
+      }else{
+        $('#last-child-dob').attr('disabled', 'disabled');
+        $('.twin_check').attr('disabled', 'disabled');
+        document.getElementById('radio-twin').checked = false;
+        document.getElementById('radio-twin1').checked = false;
+      }
+    }
+
+
+
+    function mp_velid(){
+      var e = $("[name='switch-one']:checked").val();
+      
+      if (e=='YES') {
+        $('#radio-three').prop('checked',true);
+        $('#radio-four').removeAttr('disabled');
+        $('#radio-five').removeAttr('disabled');
+        $('#radio-six').removeAttr('disabled');
+        $('#radio-seven').removeAttr('disabled');
+        $('#radio-CREAMY').prop('checked',false);
+        $('#radio-CREAMY1').prop('checked',false);
+      }else{
+        $('#radio-three').prop('checked',true);
+        $('#radio-four').attr('disabled', 'disabled');
+        $('#radio-five').attr('disabled', 'disabled');
+        $('#radio-six').attr('disabled', 'disabled');
+        $('#radio-seven').attr('disabled', 'disabled');
+        $('#radio-CREAMY').attr('disabled', 'disabled');
+        $('#radio-CREAMY1').attr('disabled', 'disabled');
+      }
+    }
+
+    function obc_check(){
+      var obc = $("[name='switch-two']:checked").val();
+      if (obc=='OBC') {
+        $("[name='switch-CREAMY']").removeAttr('disabled');
+        $('#radio-CREAMY').prop('checked',true);
+      }else{
+        $("[name='switch-CREAMY']").attr('disabled', 'disabled').prop('checked',false);
+
+      }
+    }
+
+    function punished_check(){
+      var sp = $("[name='switch-PUNISHED']:checked").val();
+      if (sp=='YES') {
+        alert('You Are Not Eligible to Apply for this  Post. Please Refer Advertisement Document for further clarification.');
+        $('#radio-PUNISHED1').prop('checked',true);
+      }else{
+
+      }
+    }
+
+    function section_check(){
+      var s = $("[name='switch-SELECTION']:checked").val();
+      if (s=='YES') {
+        alert('You Are Not Eligible to Apply for this  Post. Please Refer Advertisement Document for further clarification');
+        $('#radio-SELECTION1').prop('checked',true);
+      }else{
+
+      }
+    }
+
+    function live_registration(){
+      var sl = $("[name='switch-LIVEREGISTRATION']:checked").val();
+      if (sl=='NO') {
+        alert('Candidate Should Ensure to have Live Registration in the Employment Office of Madhya Pradesh.');
+        $("[name='switch-LIVEREGISTRATION']").prop('checked',false);
+      }else{
+
+      }
+    }
+
+    // function serving_check(){
+    //   var slive = $("[name='switch-SERVING']:checked").val();
+    //   if (slive=='YES') {
+    //     alert('You Are Not Eligible to Apply for this  Post. Please Refer Advertisement Document for further clarification.');
+    //     $("[name='switch-SERVING']").prop('checked',false);
+    //   }else{
+
+    //   }
+    // }
+
+
+    function x_server_check(){
+      var x_server = $("[name='switch-EX-SERVICEMAN']:checked").val();
+      if (x_server=='YES') {
+        $("[name='Service_Period']").removeAttr('disabled');
+        $('#radio-EX-SERVICEMAN').prop('checked',true);
+      }else{
+        $("[name='Service_Period']").attr('disabled', 'disabled').prop('checked',false);
+        $('#radio-EX-SERVICEMAN1').prop('checked',true);
+      }
+    }
+
+    $(document).delegate("#form1","submit",function(){
+      var Department = $('#Department').val();
+      if (Department=='YES') {
+        var mdate1 = $('#Posted').val().toString();
+        var yearThen1 = parseInt(mdate1.substring(0,4), 10);
+        var monthThen1 = parseInt(mdate1.substring(5,7), 10);
+        var dayThen1 = parseInt(mdate1.substring(8,10), 10);
+        
+        var today1 = new Date();
+        var birthday1 = new Date(yearThen1, monthThen1-1, dayThen1);
+        
+        var differenceInMilisecond1 = today1.valueOf() - birthday1.valueOf();
+        
+        var year_age1 = Math.floor(differenceInMilisecond1 / 31536000000);
+        var day_age1 = Math.floor((differenceInMilisecond1 % 31536000000) / 86400000);
+        
+      
+        var month_age1 = Math.floor(day_age1/30);
+        
+        day_age1 = day_age1 % 30;
+        var posted_scince= year_age1;
+
+        var t = new Date('01-01-2018');
+        var t2 = Date.parse($('#Posted').val());
+        if (t>=t2) {
+          var posted_scince= 7;
+        }else{
+          var posted_scince= year_age1;
+        }
+
+      }else{
+        var posted_scince= 0;
+      }
+
+
+      var x_server = $("[name='switch-EX-SERVICEMAN']:checked").val();
+      if (x_server=='YES') {
+        var v = $('#Service_Period').val();
+        if (v>=3) {
+          var x_server_val = 3;
+        }else{
+          var x_server_val = v;
+        }
+        
+      }else{
+        var x_server_val = 0;
+      }
+
+      var mdate = $('#dob').val().toString();
+      var yearThen = parseInt(mdate.substring(0,4), 10);
+      var monthThen = parseInt(mdate.substring(5,7), 10);
+      var dayThen = parseInt(mdate.substring(8,10), 10);
+      
+      var today = new Date('01-01-2022');
+      var birthday = new Date(yearThen, monthThen-1, dayThen);
+      
+      var differenceInMilisecond = today.valueOf() - birthday.valueOf();
+      
+      var year_age = Math.floor(differenceInMilisecond / 31536000000);
+      var day_age = Math.floor((differenceInMilisecond % 31536000000) / 86400000);
+      
+    
+      var month_age = Math.floor(day_age/30);
+      
+      day_age = day_age % 30;
+      
+      var gender = $('#gender').val();
+      var mp_candidate = $("[name='switch-one']:checked").val();
+      var CATEGORY = $("[name='switch-two']:checked").val();
+      var SERVING_IN_THE_GOVERNMENT = $("[name='switch-SERVING']:checked").val();
+      var switch_Vikram = $("[name='switch-Vikram']:checked").val();
+      var post_age=0;
+      if (mp_candidate=='YES' && gender=='FEMALE' && CATEGORY=='UR') {
+
+        post_age=48;
+      }else if(x_server=='YES') {
+       var post_age = Number(x_server_val)+43;
+      }else if(Department=='YES'){
+        var post_age = Number(posted_scince)+43;
+      }else{
+        if (SERVING_IN_THE_GOVERNMENT=='YES' || CATEGORY=='SC' || CATEGORY=='ST' || CATEGORY=='OBC' || switch_Vikram=='YES') {
+          post_age=48;
+        }else{
+          post_age=43;
+        }
+      }
+
+      if (post_age >= year_age) {
+        alert('eligible');
+        return true;
+      }else{
+        alert('Your Not eligible for this post.');
+        return false;
+      }
+
+      
+    });
+    </script>
+  </body>
+{% endblock %}
+

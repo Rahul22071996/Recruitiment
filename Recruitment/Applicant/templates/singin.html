@@ -1,0 +1,56 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+  
+    
+    <!--include search-sidebar-->
+    <div class="ps-page--signin">
+      <div class="container">
+        <form class="ps-form--signin"  method="POST" action="/singin/">
+          {% csrf_token %}
+          <div class="ps-form__header">
+            <h4>MPMKVVCL Recruitment Portal</h4>
+            {% for message in messages %}
+        <font color="red">{{message}}</font>
+        {% endfor %}
+            <p>Enter Username and Password</p>
+           
+          </div>
+          {{form.errors}}
+          <div class="ps-form__content">
+            <div class="form-group">
+              <input class="form-control" name="username" type="text" placeholder="username" >
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="password" type="password" placeholder="Password" >
+              
+            </div>
+          </div>
+          <div class="ps-form__actions">
+            <div class="ps-checkbox ps-checkbox--circle">
+              <input class="form-control" type="checkbox" id="newsletter" name="newsletters"/>
+              <label for="newsletter">Remember me</label>
+            </div><a href="/reset-password/">Forgot password</a>
+          </div>
+          <div class="ps-form__footer">
+            <input type="hidden" name="freelancerLogin" value="freelancerLogin">
+            <input type="hidden" name="currentPage" value="">
+            <button type="submit" class="ps-btn ps-btn--fullwidth ps-btn--gradient submitButton">Login</button>
+            <p>Don't have an account?<a href="/singup/"> Sign up now!</a></p>
+        
+          </div>
+        </form>
+
+      </div>
+    </div>
+    
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+   
+    <!-- Plugins-->
+    
+  {% endblock %}

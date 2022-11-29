@@ -1,0 +1,248 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+
+<body>
+    
+    <style type="text/css">
+      .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 1px solid #2e3092;
+  color: #EC008B;
+  background-color: white;
+  padding: 8px 50px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+      .switch-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #EC008B;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+  max-width: 600px;
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+  line-height: 1.625;
+  margin: 8px auto;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+    </style>
+      
+   
+    <div class="ps-page">
+      
+      <div class="ps-about-business ps-contact-us">
+        <div class="container">
+           <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <li ><a href="#">PERSONAL DETAILS</a></li>
+          <li ><a href="#">OTHER DETAILS</a></li>
+          <li><a href="#">EDUCTION</a></li>
+          <li ><a href="#">ADDRESS</a></li>
+          <li><a href="#">BANK DETAILS</a></li>
+          <li class="active"><a href="#">DOCUMENT UPLOAD</a></li>
+          <li><a href="#">CHOICE FILLING</a></li>
+         
+        </ul>
+      </nav>
+          <br>
+          <br>
+ <nav class="ps-navigation--dashboard">
+        <ul>
+         
+          <center><li ><a href="#"><h4>UPLOAD DOCUMENT</h4></a></li>
+         </center>
+         
+         
+        </ul>
+      </nav>
+      <br>
+      <center><p style="color: #EC008B;"><b>(File Size Must Be Under '2-MB')</b></center>
+        <br>
+
+          <div class="container">
+
+           
+            <form class="ps-form--contact" method="POST"  action="/document/upload/" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="row">
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">HIGH SCHOOL/ 10 TH MARKSHEET <span style="color: red; font-size: 15px;">*</span></label>
+                    <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="HIGH_SCHOOL" required="" />
+                  </div>
+                   
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">INTERMEDIATE/HSSC/DIPLOMA MARKSHEET <span style="color: red; font-size: 15px;">*</span></label>
+                     <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="HSSC" required="" />
+                  </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">GRADUATION MARKSHEET PDF UPLOAD <span style="color: red; font-size: 15px;">*</span></label>
+                      <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="GRADUATION_MARKSHEET_PDF" required="" />
+                  </div>
+                   
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;">POST-GRADUATION MARKSHEET PDF <span style="color: red; font-size: 15px;">*</span></label>
+                    <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="POST_GRADUATION" required="" />
+                  </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> UPLOAD YOUR AADHAAR CARD <span style="color: red; font-size: 15px;">*</span> </label>
+                    <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="AADHAAR_CARD" required="" />
+                  </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> CASTE CERTIFICATE PDF UPLOAD <span style="color: red; font-size: 15px;">*</span></label>
+                     <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="CAST_CERTIFICATE" required="" />
+                  </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> GATE SCORECARD PDF UPLOAD <span style="color: red; font-size: 15px;">*</span></label>
+                     <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="GATE_SCORECARD" required="" />
+                  </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> DEPARTMENTAL NOC (FOR IN-SERVICE CANDIDATE) </label>
+                    <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="DEPARTMENTAL_NOC" />
+                  </div>
+                  </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> INCOME CERTIFICATE  (OBC( Non Creamy Layer))</label>
+                    <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="Income_Certificate" />
+                  </div>
+                  </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                  <div class="form-group">
+                    <label style="font-weight: bold;"> DISABLITY CERTIFICATE (P.W.D) </label>
+                    <div class="upload-btn-wrapper">
+                <button class="btn">Choose file</button>
+                <input type="file" name="Disabilty_Certficate" />
+                  </div>
+                  </div>
+                </div>
+               
+                     </div>
+                <input type="hidden" name="company_token" value="{{res}}">
+              </div>
+
+             <div class="ps-form__submit">
+                 <!-- <input type="hidden" name="bussiness_inquire" value="bussiness_inquire">
+                  <a href="/bank/details/" class="btn ps-btn ps-btn--gradient  me-2 btn-lg" type="reset" style="color: white;">Previous</a> -->
+                   <a class="ps-btn  ps-btn--gradient"  href="/bank/details/"> Previous</a>
+                 
+                <button class="ps-btn getSubmitButton ps-btn--gradient" style="float: right;">&nbsp;&nbsp; Next &nbsp;&nbsp;</button>
+
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+  </body>
+{% endblock %}
